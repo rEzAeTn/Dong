@@ -1,3 +1,6 @@
+from typing import List, Tuple, Union
+
+
 class Purchase:
     """
     This class represents a purchase made by one or more people.

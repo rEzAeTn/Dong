@@ -147,3 +147,4 @@ class DataProcessor:
         summary_dataframe = pd.DataFrame(summary_dataset, index = ['TOTAL SPENT', 'TOTEL SHARE', 'BALANCES'])
 
         return summary_dataframe
+p
