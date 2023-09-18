@@ -9,20 +9,34 @@ from src.utils.inputs import Inputs
 
 
 def main():
-    purchase_manager = PurchaseManager()
     get_input = Inputs()
+    purchase_manager = PurchaseManager()
+    data_frame = purchase_manager.create_dataframe()
+    
+    while True:
+        input_names = get_input.get_names()
+        input_purchase_description = get_input.get_purchase_description()
+        input_amount_paid = get_input.get_amount_paid()
+        input_payer_name = get_input.get_payer_name()
+        input_consumer = get_input.get_consumer_name()
 
-    names = get_input.get_names()
-    purchase_description = get_input.get_purchase_description()
-    amount_paid = get_input.get_amount_paid()
-    payer_name = get_input.get_payer_name()
-    consumer = get_input.get_consumer_name()
+        create_purchase = Purchase(purchase_description=input_purchase_description ,
+                                   amount_paid=input_amount_paid,
+                                   payer_name=input_payer_name,
+                                   consumer=input_consumer
+                                   )
+        
+        purchase_manager.add_purchase(create_purchase)
 
-    print(names)
-    print(purchase_description)
-    print(amount_paid)
-    print(payer_name)
-    print(consumer)
+        suggest = input("View Status Summary, `Y or ...`")
+        if suggest.upper() == "Y":
+            print(data_frame)
+            break
+
+            
+
+
+
 
 
 
