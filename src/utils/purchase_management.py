@@ -1,3 +1,8 @@
+from typing import List, Tuple, Union
+
+import pandas as pd
+
+
 class PurchaseManager:
     """
     This class manages a list of purchases and can generate a data frame containing information about all purchases.
@@ -8,13 +13,13 @@ class PurchaseManager:
         self.purchases = []
 
 
-    def add_purchase(self, purchase: Purchase):
+    def add_purchase(self, purchase):
         # Add a new purchase to the list
         self.purchases.append(purchase)
         return self.add_purchase
 
 
-    def create_dataframe(self) -> pd.DataFrame:
+    def create_dataframe(self):
         # Initialize empty lists to store data
         purchase_descriptions = []
         amounts_paid = []

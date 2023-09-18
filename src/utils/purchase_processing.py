@@ -1,5 +1,6 @@
 from typing import List, Tuple, Union
 
+import pandas as pd
 
 
 class DataProcessor:
@@ -11,7 +12,7 @@ class DataProcessor:
     for each person involved in the purchases.
     """
 
-    def __init__(self, data_frame: pd.DataFrame):
+    def __init__(self, data_frame):
         # Initialize DataProcessor with given data frame
         self.data_frame = data_frame
 
@@ -80,7 +81,7 @@ class DataProcessor:
 
         return rounded_balances
 
-    def create_summary_report_dataframe(self, ) -> pd.DataFrame:
+    def create_summary_report_dataframe(self, ):
         """
         Creates a summary report data frame containing information about
         - total spent
@@ -147,4 +148,3 @@ class DataProcessor:
         summary_dataframe = pd.DataFrame(summary_dataset, index = ['TOTAL SPENT', 'TOTEL SHARE', 'BALANCES'])
 
         return summary_dataframe
-p

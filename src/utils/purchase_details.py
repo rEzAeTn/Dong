@@ -32,13 +32,7 @@ class Purchase:
 
         self.purchase_description = purchase_description
         self.amount_paid = amount_paid
-
-        if isinstance(payer_name, str):
-            payer_name = (payer_name, )
         self.payer_name = payer_name
-
-        if isinstance(consumer, str):
-            consumer = (consumer, )
         self.consumer = consumer
 
 
