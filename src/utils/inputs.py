@@ -9,7 +9,7 @@ class Inputs():
             name = input("Enter Name Partners, `at the End Enter Q` ")
             if name.upper() == "Q":
                 break
-            names.append(name)
+            names.append(name.strip())
         
         unique_names = set(map(str.title, names))
         return unique_names
@@ -41,7 +41,7 @@ class Inputs():
             name = input("Enter Payer Name, `at the End Enter Q` ")
             if name.upper() == "Q":
                 break
-            names.append(name)
+            names.append(name.strip())
         
         unique_names = set(map(str.title, names))
         return unique_names
@@ -53,7 +53,7 @@ class Inputs():
             name = input("Enter Consumer Name, `at the End Enter Q` ")
             if name.upper() == "Q":
                 break
-            names.append(name)
+            names.append(name.strip())
         
         unique_names = set(map(str.title, names))
         return unique_names

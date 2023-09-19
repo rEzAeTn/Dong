@@ -7,11 +7,10 @@ from src.utils.purchase_processing import DataProcessor
 from src.utils.inputs import Inputs
 
 
-
 def main():
     get_input = Inputs()
     purchase_manager = PurchaseManager()
-    data_frame = purchase_manager.create_dataframe()
+    
     
     while True:
         input_names = get_input.get_names()
@@ -30,10 +29,25 @@ def main():
 
         suggest = input("View Status Summary, `Y or ...`")
         if suggest.upper() == "Y":
-            print(data_frame)
-            break
+            data_frame = purchase_manager.create_dataframe()
 
+            data_processor = DataProcessor(data_frame)
+            total_spent = data_processor.calculate_total_spent()
+            total_share = data_processor.calculate_total_share()
+            balances = data_processor.calculate_balances()
+            summary_report_dataframe = data_processor.create_summary_report_dataframe()
+
+            print(data_frame)
+            print()
+            print(f'total spent --> {total_spent}')
+            print(f'total share --> {total_share}')
+            print(f'Balances    --> {balances}')
+            print()
+            print(summary_report_dataframe)
+            print()
             
+            continue
+
 
 
 
