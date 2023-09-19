@@ -19,7 +19,8 @@ def main():
 
     while True:
         # Get inputs for purchase details
-        input_names = get_input.get_names()
+        # TODO: get name partner and ceate grup
+        # input_names = get_input.get_names()
         input_purchase_description = get_input.get_purchase_description()
         input_amount_paid = get_input.get_amount_paid()
         input_payer_name = get_input.get_payer_name()
