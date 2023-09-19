@@ -74,7 +74,9 @@ class DataProcessor:
                 balances[consumer] -= split_amount
 
             for payer in row['payer_name']:
-                balances[payer] += row['amount_paid'] / len(row['payer_name'])
+                balances[payer] = balances.get(payer, 0) + row['amount_paid'] / len(row['payer_name'])
+                # ! line down replace by line up
+                # balances[payer] += row['amount_paid'] / len(row['payer_name'])
 
         # Round balance values to 2 decimal places
         rounded_balances = {name: round(value, 2) for name, value in balances.items()}
